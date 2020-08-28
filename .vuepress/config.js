@@ -1,5 +1,6 @@
 module.exports = {
   "title": "博客",
+  "base": "/vuepress-reco/",
   "description": "HXF博客",
   "dest": "public",
   "head": [
@@ -19,16 +20,6 @@ module.exports = {
     ]
   ],
   "theme": "reco",
-  // "themeConfig": {
-  //   "@vssue/vuepress-plugin-vssue": {
-  //     "platform": 'github-v4',
-  //     "owner": 'HXF-A',
-  //     "repo": 'vuepress-reco',
-  //     "clientId": '2de4084bd53f1f7229f8',
-  //     "clientSecret": '4b87b6be76f4425dc1dd4be8706b8bf6d3ce37a3',
-  //     "autoCreateIssue": 'true',
-  //   }
-  // },
   "plugins": [
     ['@vuepress-reco/comments', {
     "solution": 'vssue',
