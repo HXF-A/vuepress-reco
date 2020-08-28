@@ -1,6 +1,6 @@
 module.exports = {
   "title": "博客",
-  "base": "/",
+  "base": "/docs",
   "description": "HXF博客",
   "dest": "public",
   "head": [
