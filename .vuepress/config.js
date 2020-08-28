@@ -1,6 +1,6 @@
 module.exports = {
   "title": "博客",
-  "base": "/vuepress-reco/",
+  "base": "/",
   "description": "HXF博客",
   "dest": "public",
   "head": [
