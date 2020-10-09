@@ -1,6 +1,7 @@
 module.exports = {
   "title": "博客",
   "description": "HXF博客",
+  "base": '/',
   "dest": "public",
   "head": [
     [
@@ -19,58 +20,13 @@ module.exports = {
     ]
   ],
   "theme": "reco",
-  // "themeConfig": {
-  //   "@vssue/vuepress-plugin-vssue": {
-  //     "platform": 'github-v4',
-  //     "owner": 'HXF-A',
-  //     "repo": 'vuepress-reco',
-  //     "clientId": '2de4084bd53f1f7229f8',
-  //     "clientSecret": '4b87b6be76f4425dc1dd4be8706b8bf6d3ce37a3',
-  //     "autoCreateIssue": 'true',
-  //   }
-  // },
-  "plugins": [
-    ['@vuepress-reco/comments', {
-    "solution": 'vssue',
-    "options": {
-      "title": 'vuepress-theme-reco',
-      "platform": 'github-v4',
-      "owner": 'HXF-A',
-      "repo": 'vuepress-reco',
-      "clientId": '2de4084bd53f1f7229f8',
-      "clientSecret": '4b87b6be76f4425dc1dd4be8706b8bf6d3ce37a3',
-    }
-  }],
-  ['@vuepress-reco/vuepress-plugin-bgm-player', {
-      "audios": [
-        // 网络文件示例
-        {
-          "name": '강남역 4번 출구',
-          "artist": 'Plastic / Fallin` Dild',
-          "url": 'https://assets.smallsunnyfox.com/music/2.mp3',
-          "cover": 'https://assets.smallsunnyfox.com/music/2.jpg'
-        },
-        {
-          "name": '用胳膊当枕头',
-          "artist": '최낙타',
-          "url": 'https://assets.smallsunnyfox.com/music/3.mp3',
-          "cover": 'https://assets.smallsunnyfox.com/music/3.jpg'
-        }
-      ],
-      "position" : {
-        "right": '10px',
-        "top": '100px',
-        "z-index": '999999'
-      },
-      "autoShrink" : 'true',
-      "floatPosition" : 'right',
-      "floatStyle" : { 
-        "top": '128px',
-        "z-index": '999999'
-      }
-  }]
-],
   "themeConfig": {
+        // 密钥
+    // "keyPage": {
+    //   "keys": ['e10adc3949ba59abbe56e057f20f883e'], // 1.3.0 版本后需要设置为密文
+    //   "color": '#42b983', // 登录页动画球的颜色
+    //   "lineColor": '#42b983' // 登录页动画线的颜色
+    // },
     "nav": [
       {
         "text": "Home",
@@ -100,6 +56,11 @@ module.exports = {
             "text": "GitHub",
             "link": "https://github.com/HXF-A",
             "icon": "reco-github"
+          },
+          {
+            "text": "Google",
+            "icon": "reco-Google",
+            "link": "https://www.google.com/"
           }
         ]
       }
@@ -142,11 +103,56 @@ module.exports = {
     "searchMaxSuggestions": 10,
     "lastUpdated": "Last Updated",
     "author": "HXF",
-    "authorAvatar": "/avatar.png",
+    "authorAvatar": "/gua.jpeg",
     "record": "xxxx",
     "startYear": "2017"
   },
-  "markdown": {
-    "lineNumbers": true
-  }
+  markdown: {
+    lineNumbers: true,
+    extendMarkdown: md => {
+      md.use(require('markdown-it-katex'))
+    }
+  },
+  plugins: [
+    ['@vuepress-reco/comments', {
+    solution: 'vssue',
+    options: {
+      title: 'vuepress-theme-reco',
+      platform: 'github-v4',
+      owner: 'HXF-A',
+      repo: 'vuepress-reco',
+      clientId: '2de4084bd53f1f7229f8',
+      clientSecret: '4b87b6be76f4425dc1dd4be8706b8bf6d3ce37a3',
+    }
+  }],
+  ['@vuepress-reco/vuepress-plugin-bgm-player', {
+      audios: [
+        // 网络文件示例
+        {
+          name: '강남역 4번 출구',
+          artist: 'Plastic / Fallin` Dild',
+          url: 'https://assets.smallsunnyfox.com/music/2.mp3',
+          cover: 'https://assets.smallsunnyfox.com/music/2.jpg'
+        },
+        {
+          name: '用胳膊当枕头',
+          artist: '최낙타',
+          url: 'https://assets.smallsunnyfox.com/music/3.mp3',
+          cover: 'https://assets.smallsunnyfox.com/music/3.jpg'
+        }
+      ],
+      position : {
+        right: "10px",
+        top: "100px",
+        zIndex: "999999"
+      },
+      autoShrink : true,
+      floatPosition : "right",
+      floatStyle : { 
+        top: "128px",
+        zIndex: "999999"
+      }
+  }]
+],
+
 }
